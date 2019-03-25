@@ -1,6 +1,3 @@
-require(maptools)
-require(letsR)
-require(rgdal)
 
 makePAM <- function (path, xmn = -180, xmx = 180, ymn = -90, ymx = 90, resol = 1, 
         remove.cells = TRUE, remove.sp = TRUE, show.matrix = FALSE, 
@@ -12,6 +9,9 @@ makePAM <- function (path, xmn = -180, xmx = 180, ymn = -90, ymx = 90, resol = 1
   if ( ! ("letsR" %in% installed.packages())) {install.packages("letsR", dependencies = T)}
   if ( ! ("rgdal" %in% installed.packages())) {install.packages("rgdal", dependencies = T)}
   
+require(maptools)
+require(letsR)
+require(rgdal)
   
   shapes <- list.files(path, pattern = "shp$", full.names = T, 
                        recursive = T)
